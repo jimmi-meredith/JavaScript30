@@ -68,9 +68,9 @@ const playSound = event => {
   key.classList.add('playing')
 }
 
-const removeTransition = (event) => {
+const removeTransition = event => {
   if (event.propertyName !== 'transform') return
-  this.classList.remove('playing')
+  event.target.classList.remove('playing')
 }
 
 const keys = document.querySelectorAll('.key')
