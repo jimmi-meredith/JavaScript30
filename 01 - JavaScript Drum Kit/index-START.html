@@ -70,7 +70,7 @@ window.addEventListener('keydown', (event) => {
 
 const removeTransition = (event) => {
   if (event.propertyName !== 'transform') return
-  console.log(event.propertyName)
+  this.classList.remove('playing')
 }
 
 const keys = document.querySelectorAll('.key')
