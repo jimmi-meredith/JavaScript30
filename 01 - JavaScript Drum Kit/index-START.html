@@ -69,7 +69,8 @@ window.addEventListener('keydown', (event) => {
 })
 
 const removeTransition = (event) => {
-  console.log(event)
+  if (event.propertyName !== 'transform') return
+  console.log(event.propertyName)
 }
 
 const keys = document.querySelectorAll('.key')
