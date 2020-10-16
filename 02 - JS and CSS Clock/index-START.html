@@ -71,12 +71,14 @@
   </style>
 
   <script>
-    const secondHand = document.querySelector('.hand second-hand')
+    const secondHand = document.querySelector('.second-hand')
 
     const setDate = () => {
       const currentTime = new Date()
       const seconds = currentTime.getSeconds()
       const secondsDegrees = (seconds / 60) * 360
+
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`
 
       console.log(seconds)
     }
