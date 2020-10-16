@@ -72,7 +72,9 @@
 
   <script>
     const setDate = () => {
-      console.log('Hello World')
+      const currentTime = new Date()
+      const seconds = currentTime.getSeconds()
+      console.log(seconds)
     }
 
     setInterval(setDate, 1000)
