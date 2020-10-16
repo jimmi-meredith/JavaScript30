@@ -75,12 +75,14 @@
 
     const setDate = () => {
       const currentTime = new Date()
+      const minutes = currentTime.getMinutes()
       const seconds = currentTime.getSeconds()
       const secondsDegrees = ((seconds / 60) * 360) + 90
+      const minutesDegress = ((seconds / 60) * 360) + 90
 
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`
 
-      console.log(seconds)
+      console.log(minutes)
     }
 
     setInterval(setDate, 1000)
