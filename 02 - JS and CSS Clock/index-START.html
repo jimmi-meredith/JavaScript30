@@ -75,20 +75,18 @@
     const minuteHand = document.querySelector('.min-hand')
     const hourHand = document.querySelector('.hour-hand')
 
-
     const setDate = () => {
       const currentTime = new Date()
+      const hours = currentTime.getHours()
       const minutes = currentTime.getMinutes()
       const seconds = currentTime.getSeconds()
+      const hoursDegrees = ((hours / 12) * 360) + 90
       const minutesDegrees = ((minutes / 60) * 360) + 90
       const secondsDegrees = ((seconds / 60) * 360) + 90
 
       minuteHand.style.transform = `rotate(${minutesDegrees}deg)`
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`
-
-      
-
-      console.log(minutes)
+      hourHand.style.transform = `rotate(${hoursDegrees}deg)`
     }
 
     setInterval(setDate, 1000)
