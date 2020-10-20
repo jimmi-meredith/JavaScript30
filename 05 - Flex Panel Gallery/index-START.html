@@ -138,6 +138,12 @@
       event.target.classList.toggle('open')
     }
 
+    const toggleActive = event => {
+      if (event.propertyName.includes('flex')) {
+        event.classList.toggle('open-active')
+      }
+    }
+
     panels.forEach(panel => panel.addEventListener('click', toggleOpen))
   </script>
 
