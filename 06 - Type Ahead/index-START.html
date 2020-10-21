@@ -21,7 +21,7 @@ const cities = []
 
 fetch(endpoint)
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(data => cities.push(...data))
 
 </script>
 </body>
