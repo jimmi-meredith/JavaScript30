@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Type Ahead 👀</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <form class="search-form">
@@ -14,32 +16,38 @@
       <li>or a state</li>
     </ul>
   </form>
-<script>
-const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
-const cities = []
-const searchInput = document.querySelector('.search')
-const suggestions = document.querySelector('.suggestions')
+  <script>
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+    const cities = []
+    const searchInput = document.querySelector('.search')
+    const suggestions = document.querySelector('.suggestions')
 
-fetch(endpoint)
-  .then(response => response.json())
-  .then(data => cities.push(...data))
+    fetch(endpoint)
+      .then(response => response.json())
+      .then(data => cities.push(...data))
 
-const findMatches = (word, cities) => {
-  return cities.filter(place => {
-    const regex = new RegExp(word, 'gi')
-    return place.city.match(regex) || place.state.match(regex)
-  })
-}  
+    const findMatches = (word, cities) => {
+      return cities.filter(place => {
+        const regex = new RegExp(word, 'gi')
+        return place.city.match(regex) || place.state.match(regex)
+      })
+    }
 
-const displayMatches = event => {
-  const matchArray = findMatches(event.target.value, cities)
-  console.log(matchArray)
-}
+    const displayMatches = event => {
+      const matchArray = findMatches(event.target.value, cities)
+      const html = matchArray.map(place => {
+        return `
+            <li>
+              <span class="name">${place.city}, ${place.name}</span>
+              <span class="population">${place.population}</span>
+            </li>  
+          `
+      })
+    }
 
-searchInput.addEventListener('change', displayMatches)
-searchInput.addEventListener('keyup', displayMatches)
-
-
-</script>
+    searchInput.addEventListener('change', displayMatches)
+    searchInput.addEventListener('keyup', displayMatches)
+  </script>
 </body>
+
 </html>
