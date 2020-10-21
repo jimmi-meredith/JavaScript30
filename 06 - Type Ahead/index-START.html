@@ -20,7 +20,6 @@ const cities = []
 const searchInput = document.querySelector('.search')
 const suggestions = document.querySelector('.suggestions')
 
-
 fetch(endpoint)
   .then(response => response.json())
   .then(data => cities.push(...data))
@@ -35,6 +34,8 @@ const findMatches = (word, cities) => {
 const displayMatches = () => {
   console.log(this.value)
 }
+
+searchInput.addEventListener('change', findMatches)
 
 </script>
 </body>
