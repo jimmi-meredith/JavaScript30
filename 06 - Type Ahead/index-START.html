@@ -32,10 +32,13 @@ const findMatches = (word, cities) => {
 }  
 
 const displayMatches = event => {
-  console.log(event.target.value)
+  const matchArray = findMatches(event.target.value, cities)
+  console.log(matchArray)
 }
 
+searchInput.addEventListener('change', displayMatches)
 searchInput.addEventListener('keyup', displayMatches)
+
 
 </script>
 </body>
