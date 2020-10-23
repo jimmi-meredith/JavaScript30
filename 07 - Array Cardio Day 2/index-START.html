@@ -53,8 +53,10 @@
 
     const index = comments.findIndex(comment => comment.id === 823423)
 
-    const newComments = []
-
+    const newComments = [
+      ...comments.slice(0, index),
+      ...comments.slice(index + 1)
+    ]
   </script>
 </body>
 
