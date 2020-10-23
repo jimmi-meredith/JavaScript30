@@ -44,7 +44,9 @@
     // find the comment with the ID of 823423
 
     const comment = comments.find(comment => {
-      console.log(comment)
+      if (comment.id === 823423) {
+        return true
+      }
     })
 
     // Array.prototype.findIndex()
