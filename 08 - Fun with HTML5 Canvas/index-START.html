@@ -21,6 +21,13 @@
     let isDrawing = false
     let lastX = 0
     let lastY = 0
+
+    const draw = event => {
+      if (!isDrawing) return
+      console.log(event)
+    }
+
+    canvas.addEventListener('mousemove', draw)
   </script>
 
   <style>
