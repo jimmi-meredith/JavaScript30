@@ -23,11 +23,11 @@
     let lastX = 0
     let lastY = 0
     let hue = 0
+    let direction = true
 
     const draw = event => {
       if (!isDrawing) return
       context.strokeStyle = `hsl(${hue}, 100%, 50%)`
-      context.lineWidth = hue
       context.beginPath()
       context.moveTo(lastX, lastY)
       context.lineTo(event.offsetX, event.offsetY)
@@ -38,6 +38,10 @@
       if (hue >= 360) {
         hue = 0
       }
+      if (context.lineWidth >= 100 || context.lineWidth <= 1) {
+        direction = !direction
+      }
+      context.lineWidth++
     }
 
     canvas.addEventListener('mousemove', draw)
