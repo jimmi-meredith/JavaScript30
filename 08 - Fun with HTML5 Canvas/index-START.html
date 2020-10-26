@@ -41,7 +41,9 @@
       if (context.lineWidth >= 100 || context.lineWidth <= 1) {
         direction = !direction
       }
-      context.lineWidth++
+      if (direction) {
+        context.lineWidth++
+      } else context.lineWidth--
     }
 
     canvas.addEventListener('mousemove', draw)
