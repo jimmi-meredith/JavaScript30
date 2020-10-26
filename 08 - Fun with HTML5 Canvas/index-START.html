@@ -28,6 +28,8 @@
       context.moveTo(lastX, lastY)
       context.lineTo(event.offsetX, event.offsetY)
       context.stroke()
+      lastX = event.offsetX
+      lastY = event.offsetY
     }
 
     canvas.addEventListener('mousemove', draw)
