@@ -24,9 +24,15 @@ const handleRangeUpdate = event => {
   video[event.target.name] = event.target.value
 }
 
+const handleProgress = event => {
+  const percent = (video.currentTime / video.duration) * 100
+  progressBar.style.flexBasis = `${percent}%`
+}
+
 video.addEventListener('click', togglePlay)
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', updateButton)
+video.addEventListener('timeupdate', handleProgress)
 toggle.addEventListener('click', togglePlay)
 
 skipButtons.forEach(button => button.addEventListener('click', skip))
