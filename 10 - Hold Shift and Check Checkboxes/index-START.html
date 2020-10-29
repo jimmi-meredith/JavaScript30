@@ -102,6 +102,10 @@
     let lastChecked
 
     const handleCheck = event => {
+      let inBetween = false
+      if (event.shitKey && event.target.checked) {
+
+      }
       lastChecked = event.target
     }
 
