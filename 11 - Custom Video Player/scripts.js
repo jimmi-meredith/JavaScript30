@@ -34,12 +34,17 @@ const scrub = event => {
   video.currentTime = scrubTime
 }
 
+let mouseDown = false
+
 video.addEventListener('click', togglePlay)
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', updateButton)
 video.addEventListener('timeupdate', handleProgress)
 toggle.addEventListener('click', togglePlay)
 progress.addEventListener('click', scrub)
+progress.addEventListener('mousemove', event => mouseDown && scrub(event))
+progress.addEventListener('mousedown', () => { mouseDown = true })
+progress.addEventListener('mouseup', () => { mouseDown = false })
 
 skipButtons.forEach(button => button.addEventListener('click', skip))
 ranges.forEach(range => range.addEventListener('change', handleRangeUpdate))
