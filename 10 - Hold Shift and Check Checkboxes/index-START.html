@@ -103,10 +103,13 @@
 
     const handleCheck = event => {
       let inBetween = false
-      if (event.shitKey && event.target.checked) {
+      if (event.shiftKey && event.target.checked) {
         checkboxes.forEach(checkbox => {
           if (checkbox === lastChecked || checkbox === event.target) {
             inBetween = !inBetween
+          }
+          if (inBetween) {
+            checkbox.checked = true
           }
         })
       }
