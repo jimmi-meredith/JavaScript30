@@ -11,11 +11,12 @@ const togglePlay = () => {
   video[method]()
 }
 
-const updateButton = () => {
-  console.log('Update')
+const updateButton = event => {
+  const icon = event.target.paused ? '►' : '❚ ❚'
+  toggle.textContent = icon
 }
 
 video.addEventListener('click', togglePlay)
-// video.addEventListener('play', updateButton)
-// video.addEventListener('pause', updateButton)
+video.addEventListener('play', updateButton)
+video.addEventListener('pause', updateButton)
 toggle.addEventListener('click', togglePlay)
