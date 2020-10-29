@@ -16,8 +16,8 @@ const updateButton = event => {
   toggle.textContent = icon
 }
 
-const skip = () => {
-  console.log('Skip')
+const skip = event => {
+  video.currentTime += Number(event.target.dataset.skip)
 }
 
 video.addEventListener('click', togglePlay)
