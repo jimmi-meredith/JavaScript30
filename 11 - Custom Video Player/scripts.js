@@ -11,4 +11,11 @@ const togglePlay = () => {
   video[method]()
 }
 
+const updateButton = () => {
+  console.log('Update')
+}
+
 video.addEventListener('click', togglePlay)
+// video.addEventListener('play', updateButton)
+// video.addEventListener('pause', updateButton)
+toggle.addEventListener('click', togglePlay)
