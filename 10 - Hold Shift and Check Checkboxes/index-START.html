@@ -105,7 +105,7 @@
       let inBetween = false
       if (event.shitKey && event.target.checked) {
         checkboxes.forEach(checkbox => {
-          if (checkbox === event.target || checkbox === lastChecked) {
+          if (checkbox === lastChecked || checkbox === event.target) {
             inBetween = !inBetween
           }
         })
