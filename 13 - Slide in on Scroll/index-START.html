@@ -168,6 +168,9 @@
         const imageBottom = image.offsetTop + image.height
         const isHalfShown = slideInAt > image.offsetTop
         const isNotScrolledPast = window.scrollY < imageBottom
+        if (isHalfShown && isNotScrolledPast) {
+          image.classList.add('active')
+        } else image.classList.remove('active')
       })
     }
 
