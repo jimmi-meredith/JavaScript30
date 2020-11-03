@@ -71,7 +71,12 @@
       }).join('')
     }
 
+    const toggleDone = event => {
+      console.log(event)
+    }
+
     addItems.addEventListener('submit', addItem)
+    addItems.addEventListener('click', toggleDone)
 
     populateList(items, itemsList)
   </script>
