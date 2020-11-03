@@ -47,6 +47,15 @@
     const itemsList = document.querySelector('.plates')
     const items = []
 
+    const addItem = event => {
+      event.preventDefault()
+      const name = event.target.querySelector('[name=item]').value
+      const item = {
+        name,
+        completed: false
+      }
+    }
+
     addItems.addEventListener('submit', addItem)
   </script>
 
