@@ -58,6 +58,16 @@
       event.target.reset()
     }
 
+    const populateList = (plates = [], plateList) => {
+      platesList.innerHTML = plates.map((plate, index) => {
+        return `
+          <li>
+            <label>${plate.name}</label>
+          </li>
+          `
+      }).join()
+    }
+
     addItems.addEventListener('submit', addItem)
   </script>
 
