@@ -62,9 +62,10 @@
     const populateList = (plates = [], platesList) => {
       platesList.innerHTML = plates.map((plate, index) => {
         return `
-          <li>
-            <label>${plate.name}</label>
-          </li>
+            <li>
+              <input type="checkbox" data-index=${index} id=item${index} ${plate.completed ? 'checked' : ''}/>
+              <label for=item${index}>${plate.name}</label>
+            </li>
           `
       }).join('')
     }
