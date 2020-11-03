@@ -72,7 +72,11 @@
     }
 
     const toggleDone = event => {
-      console.log(event)
+      if (!event.target.matches('input')) return
+      const index = event.target.dataset.index
+      items[index].completed = !items[index].completed
+      localStorage.setItem('items', JSON.stringify(items))
+      populateList(items, itemsList)
     }
 
     addItems.addEventListener('submit', addItem)
