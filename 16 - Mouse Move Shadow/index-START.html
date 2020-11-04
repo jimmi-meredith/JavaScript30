@@ -41,7 +41,8 @@
     const text = hero.querySelector('h1')
 
     const shadow = event => {
-      conslole.log(event)
+      const { offsetWidth: width, offsetWidth: height } = hero
+      let { offsetX: x, offsetY: y } = event
     }
 
     hero.addEventListener('mousemove', shadow)
