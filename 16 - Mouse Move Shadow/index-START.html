@@ -39,10 +39,15 @@
   <script>
     const hero = document.querySelector('.hero')
     const text = hero.querySelector('h1')
+    const walk = 100
 
     const shadow = event => {
       const { offsetWidth: width, offsetWidth: height } = hero
       let { offsetX: x, offsetY: y } = event
+      if (this !== event.target) {
+        x = x + event.target.offsetLeft
+        y = y + event.target.offsetTop
+      }
     }
 
     hero.addEventListener('mousemove', shadow)
