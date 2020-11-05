@@ -53,6 +53,8 @@
     const strip = bandName => {
       return bandName.replace(/^(a |the |an)/i, '').trim()
     }
+
+    document.querySelector('#bands').innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('')
   </script>
 
 </body>
