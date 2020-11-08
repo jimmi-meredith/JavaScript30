@@ -192,6 +192,7 @@
         const [minutes, seconds] = timecode.split(':').map(parseFloat)
         return (minutes * 60) + seconds
       })
+      .reduce((total, videoSeconds) => total + videoSeconds)
   </script>
 </body>
 
