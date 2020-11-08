@@ -189,10 +189,11 @@
     const seconds = timeNodes
       .map(node => node.dataset.time)
       .map(timecode => {
-        const [minutes, seconds] = timecode.split(':').map(parseFloat)
-        return (minutes * 60) + seconds
+        const [minutes, secs] = timecode.split(':').map(parseFloat)
+        return (minutes * 60) + secs
       })
       .reduce((total, videoSeconds) => total + videoSeconds)
+      let secondsLeft = seconds
   </script>
 </body>
 
