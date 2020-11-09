@@ -25,6 +25,7 @@ const paintToCanvas = () => {
     let pixels = ctx.getImageData(0, 0, width, height)
     // pixels = redEffect(pixels)
     pixles = rgbSplit(pixels)
+    ctx.globalAlpha = 0.1
     ctx.putImageData(pixels, 0, 0)
   }, 16)
 }
