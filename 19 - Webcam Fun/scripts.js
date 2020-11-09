@@ -25,9 +25,11 @@ const paintToCanvas = () => {
   }, 16)
 }
 
-const takePoho = () => {
+const takePhoto = () => {
   snap.currentTime = 0
   snap.play()
+  const data = canvas.toDataURL('image/jpeg')
+  console.log(data)
 }
 
 getVideo()
