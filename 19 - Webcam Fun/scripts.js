@@ -25,6 +25,11 @@ const paintToCanvas = () => {
   }, 16)
 }
 
+const takePoho = () => {
+  snap.currentTime = 0
+  snap.play()
+}
+
 getVideo()
 
 video.addEventListener('canplay', paintToCanvas)
