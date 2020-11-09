@@ -38,6 +38,15 @@ const takePhoto = () => {
   strip.insertBefore(link, strip.firstChild)
 }
 
+const redEffect = pixels => {
+  for (let i = 0; i < pixels.length; i += 4) {
+    pixels.data[i] = pixels.data[i] + 200
+    pixels.data[i + 1] = pixels.data[i + 1] - 50
+    pixels.data[i + 2] = pixels.data[i + 2] * 0.5
+  }
+  return pixels
+}
+
 getVideo()
 
 video.addEventListener('canplay', paintToCanvas)
