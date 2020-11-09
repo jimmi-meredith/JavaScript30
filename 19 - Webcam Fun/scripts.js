@@ -26,6 +26,7 @@ const paintToCanvas = () => {
     // pixels = redEffect(pixels)
     // pixles = rgbSplit(pixels)
     // ctx.globalAlpha = 0.1
+    // pixels = greenScreen(pixels)
     ctx.putImageData(pixels, 0, 0)
   }, 16)
 }
