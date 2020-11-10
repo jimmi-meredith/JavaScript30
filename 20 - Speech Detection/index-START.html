@@ -29,6 +29,10 @@
         .map(result => result.transcript)
         .join('')
         p.textContent = transcript
+        if (event.results[0].isFinal) {
+          p = document.createElement('p')
+          words.appendChild(p)
+        }
     })
     recognition.addEventListener('end', recognition.start)
 
