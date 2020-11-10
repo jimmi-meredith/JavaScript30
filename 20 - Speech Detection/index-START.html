@@ -29,6 +29,7 @@
         .map(result => result.transcript)
         .join('')
     })
+    recognition.addEventListener('end', recognition.start)
 
     recognition.start()
   </script>
