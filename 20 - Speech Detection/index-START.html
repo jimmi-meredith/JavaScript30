@@ -28,6 +28,7 @@
         .map(result => result[0])
         .map(result => result.transcript)
         .join('')
+        p.textContent = transcript
     })
     recognition.addEventListener('end', recognition.start)
 
