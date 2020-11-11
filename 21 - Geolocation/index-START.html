@@ -86,6 +86,9 @@
     navigator.geolocation.watchPosition(data => {
       speed.textContent = data.coords.speed
       arrow.style.transfrom = `rotate(${data.coords.heading}deg)`
+    }, error => {
+      console.log(error)
+      alert('Error!')
     })
   </script>
 </body>
