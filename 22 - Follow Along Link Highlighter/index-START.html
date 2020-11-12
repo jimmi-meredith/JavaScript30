@@ -41,9 +41,9 @@
         top: linkCoords.top + window.scrollY,
         left: linkCoords.left + window.scrollX
       }
-      highlight.style.width = `${linkCoords.width}`
-      highlight.style.height = `${linkCoords.height}`
-      highlight.style.transform = `translate(${linkCoords.left}px, ${linkCoords.top}px)`
+      highlight.style.width = `${coords.width}`
+      highlight.style.height = `${coords.height}`
+      highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`
     }
 
     triggers.forEach(a => a.addEventListener('mouseenter', highlightLink))
