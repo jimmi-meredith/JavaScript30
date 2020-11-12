@@ -35,6 +35,12 @@
 
     const highlightLink = event => {
       const linkCoords = event.target.getBoundingClientRect()
+      const coords = {
+        width: linkCoords.width,
+        height: linkCoords.height,
+        top: linkCoords.top + window.scrollY,
+        left: linkCoords.left + window.scrollX
+      }
       highlight.style.width = `${linkCoords.width}`
       highlight.style.height = `${linkCoords.height}`
       highlight.style.transform = `translate(${linkCoords.left}px, ${linkCoords.top}px)`
