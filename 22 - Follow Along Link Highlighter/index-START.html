@@ -35,11 +35,12 @@
 
     document.body.appendChild(highlight)
 
-    const highlightLink = () => {
-      console.log('highlight')
+    const highlightLink = event => {
+      const linkCoords = event.target.getBoundingClientRect()
+      console.log(linkCoords)
     }
 
-    triggers.forEach(a => a.addEventListener('mousemove', highlightLink))
+    triggers.forEach(a => a.addEventListener('mouseenter', highlightLink))
   </script>
 </body>
 </html>
