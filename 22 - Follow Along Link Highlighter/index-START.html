@@ -38,6 +38,7 @@
     const highlightLink = event => {
       const linkCoords = event.target.getBoundingClientRect()
       highlight.style.width = `${linkCoords.width}`
+      highlight.style.height = `${linkCoords.height}`
     }
 
     triggers.forEach(a => a.addEventListener('mouseenter', highlightLink))
