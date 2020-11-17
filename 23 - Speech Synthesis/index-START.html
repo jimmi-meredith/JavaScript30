@@ -39,6 +39,8 @@
     const stopButton = document.querySelector('#stop')
 
     msg.txt = document.querySelector('[name=text]').value
+
+    speechSynthesis.addEventListener('voiceschanged', populateVoices)
   </script>
 
 </body>
