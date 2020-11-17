@@ -51,6 +51,11 @@
       msg.voice = voices.find(voice => voice.name === event.target.value)
     }
 
+    const toggle = () => {
+      speechSynthesis.cancel()
+      speechSynthesis.speak(msg)
+    }
+
     speechSynthesis.addEventListener('voiceschanged', populateVoices)
     voicesDropdown.addEventListener('change', setVoice)
   </script>
