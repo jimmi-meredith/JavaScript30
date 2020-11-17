@@ -59,7 +59,8 @@
     }
 
     const setOption = event => {
-      console.log(event.target.name, event.target.value)
+      msg[event.target.name] = event.target.value
+      toggle()
     }
 
     speechSynthesis.addEventListener('voiceschanged', populateVoices)
