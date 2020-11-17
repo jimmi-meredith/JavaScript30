@@ -40,6 +40,11 @@
 
     msg.txt = document.querySelector('[name=text]').value
 
+    const populateVoices = event => {
+      voices = event.target.getVoices()
+      console.log(voices)
+    }
+
     speechSynthesis.addEventListener('voiceschanged', populateVoices)
   </script>
 
