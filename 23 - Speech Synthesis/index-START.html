@@ -47,8 +47,8 @@
         .join('')
     }
 
-    const setVoice = () => {
-      console.log('Setting Voice')
+    const setVoice = event => {
+      msg.voice = voices.find(voice => voice.name === event.target.value)
     }
 
     speechSynthesis.addEventListener('voiceschanged', populateVoices)
