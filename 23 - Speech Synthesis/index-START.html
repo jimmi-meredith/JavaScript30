@@ -58,6 +58,10 @@
       }
     }
 
+    const setOption = event => {
+      console.log(event.target.name, event.target.value)
+    }
+
     speechSynthesis.addEventListener('voiceschanged', populateVoices)
     voicesDropdown.addEventListener('change', setVoice)
     options.forEach(option => option.addEventListener('change', setOption))
