@@ -51,6 +51,8 @@
     const logText = event => {
       console.log(event.target.classList.value)
     }
+
+    divs.forEach(div => div.addEventListener('click', logText))
   </script>
 </body>
 
