@@ -53,7 +53,7 @@
       console.log(event.target.classList.value)
     }
 
-    divs.forEach(div => div.addEventListener('click', logText, { capture: true }))
+    divs.forEach(div => div.addEventListener('click', logText, { capture: true, once: true }))
   </script>
 </body>
 
