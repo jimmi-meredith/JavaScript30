@@ -49,7 +49,7 @@
     const divs = document.querySelectorAll('div')
 
     const logText = event => {
-      // event.stopPropagation()
+      event.stopPropagation()
       console.log(event.target.classList.value)
     }
 
