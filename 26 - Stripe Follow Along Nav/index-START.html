@@ -244,6 +244,8 @@
     const handleLeave = () => {
       console.log('LEAVE')
     }
+
+    triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter))
   </script>
 
 </body>
