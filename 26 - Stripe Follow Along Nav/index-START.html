@@ -237,8 +237,9 @@
     const background = document.querySelector('.dropdownBackground')
     const nav = document.querySelector('.top')
 
-    const handleEnter = () => {
-      console.log('ENTER')
+    const handleEnter = event => {
+      event.target.classList.add('trigger-enter')
+      setTimeout(() => event.target.classList.add('trigger-enter-active'), 150)
     }
 
     const handleLeave = () => {
