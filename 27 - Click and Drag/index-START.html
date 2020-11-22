@@ -59,6 +59,7 @@
     slider.addEventListener('mousemove', event => {
       if (!isDown) return
       event.preventDefault()
+      const x = event.pageX - slider.offsetX
     })
   </script>
 
