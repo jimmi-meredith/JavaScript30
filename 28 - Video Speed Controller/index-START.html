@@ -23,7 +23,7 @@
     const video = document.querySelector('.flex')
 
     speed.addEventListener('mousemove', event => {
-      console.log(event)
+      const y = event.pageY - event.target.offsetTop
     })
   </script>
 </body>
