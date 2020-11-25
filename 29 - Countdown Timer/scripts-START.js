@@ -28,5 +28,5 @@ const displayEndTime = timestamp => {
   const end = new Date(timestamp)
   const hour = end.getHours()
   const minutes = end.getMinutes()
-  endTime.textContent = `Be back at ${hour}:${minutes}`
+  endTime.textContent = `Be back at ${hour}:${minutes < 10 ? '0' : ''}${minutes}`
 }
