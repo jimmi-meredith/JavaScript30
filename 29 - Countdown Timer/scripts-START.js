@@ -39,3 +39,10 @@ const startTimer = event => {
 }
 
 buttons.forEach(button => button.addEventListener('click', startTimer))
+
+document.customForm.addEventListener('submit', event => {
+  event.preventDefault()
+  const mins = event.target.minutes.value
+  timer(mins * 60)
+  this.reset()
+})
