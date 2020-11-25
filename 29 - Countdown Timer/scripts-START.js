@@ -14,5 +14,7 @@ const timer = seconds => {
 }
 
 const displayTimeLeft = seconds => {
+  const minutes = Math.floor(seconds / 60)
+  const remainderSeconds = seconds % 60
   console.log(seconds)
 }
