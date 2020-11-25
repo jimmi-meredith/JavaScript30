@@ -1,4 +1,5 @@
 let countdown
+const timerDisplay = document.querySelector('.display__time-left')
 
 const timer = seconds => {
   const now = Date.now()
